@@ -180,7 +180,18 @@ namespace Bulk_vCard_QR_Generator
             {
                 foregroundColorButton.BackColor = MyDialog.Color;
                 programState.foreGroundColor = MyDialog.Color;
-                foreGroundColorHEX.Text = ColorToHex(MyDialog.Color);
+                foreGroundColorHEX.Text = ColorToHex(MyDialog.Color)
+            }
+        }
+        private void foregroundColorButton_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            MyDialog.Color = foregroundColorButton.BackColor;
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+            {
+                foregroundColorButton.BackColor = MyDialog.Color;
+                programState.foreGroundColor = MyDialog.Color;
+                foreGroundColorHEX.Text = ColorToHex(MyDialog.Color)
             }
         }
         private void foreGroundColorHEX_TextChanged(object sender, EventArgs e)
